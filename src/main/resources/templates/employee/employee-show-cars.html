@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Cars</title>
+    <link rel="styleSheet" type="text/css" th:href="@{/CSS/account-layout.css}">
+</head>
+<body>
+<ul th:replace="page-layout :: employeeNavBar"></ul>
+<div class="container">
+    <h3>Catalog</h3>
+
+    <div class="row">
+        <form th:action="@{/employee/cars/showcars}" method="GET">
+            <div class="col-25">
+                <Label for="title">Title</Label>
+            </div>
+            <div class="col-75">
+                <input type="text" id="title" name="title">
+            </div>
+
+            <div class="col-25">
+                <Label for="author">Author</Label>
+            </div>
+            <div class="col-75">
+                <input type="text" id="author" name="author">
+            </div>
+            <div>
+                <input type="submit" value="Search">
+            </div>
+        </form>
+
+        <form th:action="@{/employee/cars/showcars}" method="GET">
+            <div>
+                <input style="margin-left: 20px" type="submit" value="Show all cars" name="showAllCars">
+            </div>
+        </form>
+
+        <form th:action="@{/employee/cars/newcar}" method="GET">
+            <div>
+                <input style="margin-left: 20px" type="submit" value="Add new car">
+            </div>
+        </form>
+    </div>
+    <br/>
+    <table th:if="${cars.size() > 0 }" id="tablestyle">
+        <tr>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Release Year</th>
+            <th>Edition</th>
+            <th>Return Date</th>
+            <th>Reserved From</th>
+            <th>Reserved Until</th>
+            <th>Action</th>
+        </tr>
+        <tr th:each="car : ${cars}">
+            <td th:text="${car.title}"></td>
+            <td th:text="${car.author}"></td>
+            <td th:text="${car.releaseYear}"></td>
+            <td th:text="${car.edition}"></td>
+            <td th:text="${car.returnDate}"></td>
+            <td th:text="${car.startReservationDate}"></td>
+            <td th:text="${car.endReservationDate}"></td>
+            <td style="width: 240px;">
+                <form th:action="@{/employee/cars/changecarinfo}" method="GET">
+                    <input type="submit" value="Change info" class="table" style="width: 110px; margin-right: 6px"/>
+                    <input type="hidden" th:value="${car.carId}" name="changeCarId">
+                </form>
+                <form th:action="@{/employee/cars/areyousuretodeletecar}" method="GET">
+                    <input type="submit" value="Delete car" class="table" style="background-color: red; width: 110px;">
+                    <input type="hidden" name="deleteCarId" th:value="${car.CarId}">
+                </form>
+            </td>
+
+        </tr>
+
+    </table>
+</div>
+</body>
+</html>
