@@ -10,3 +10,14 @@ The car rental system serves people who do not own a car, who are out of town, o
 * Admin can manage the catalog by adding or removing cars based on availability and only allow authorized users (driver's license) to rent a vehicle
 * The administrator should make sure that the rented cars must have valid insurance.
 * The administrator must allow the user to provide comments at the end of each trip. 
+
+
+# Access level
+
+* Admin
+* Employee
+* User
+
+# Application Work Flow
+
+![alt text](https://ibb.co/9qWpW8T)
