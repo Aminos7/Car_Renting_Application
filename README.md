@@ -1,5 +1,10 @@
 # Car_Renting_Application
 The car rental system serves people who do not own a car, who are out of town, or owners of damaged cars awaiting repair or insurance compensation.
+# Table of Contents
+* The Scope of the project
+* Access level
+* Application Work Flow
+* Something Missing ?
 
 # The Scope of the project 
 
@@ -20,4 +25,13 @@ The car rental system serves people who do not own a car, who are out of town, o
 
 # Application Work Flow
 
-![alt text](https://files.fm/u/n4e43mkuw)
+
+![workflow drawio](https://user-images.githubusercontent.com/35704701/148619182-1ead2309-db9c-499d-ab4b-efd62fa5a67a.png)
+
+
+# Something Missing ?
+
+If you have ideas for more “How To” recipes that should be on this model, let us know or contribute some!
+
+# ABOUT US
+This Project is done by a bunch of geeks :stuck_out_tongue_winking_eye:	, don't hesitate to contact us :sunglasses:	 !
